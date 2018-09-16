@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-09-13 13:52:49
 * @Last Modified by:   Administrator
-* @Last Modified time: 2018-09-16 14:21:20
+* @Last Modified time: 2018-09-16 16:49:53
 */
 
 //页面加载
@@ -162,9 +162,9 @@ $(function(){
     fn();
     function move1(){
         let date=new Date();
-        let time5=new Date(2018,9,20);
+        let time5=new Date(2018,12,20);
         let timeafter=date.getTime();
-        let timebefore=time5.getTime(2018,9,20);
+        let timebefore=time5.getTime(2018,12,20);
         let timeing=Math.floor((timebefore-timeafter)/1000);
         // console.log(timeing);
         let arr=[];
