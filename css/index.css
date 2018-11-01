@@ -1,8 +1,8 @@
 /*
 * @Author: Administrator
 * @Date:   2018-08-01 21:12:31
-* @Last Modified by:   Administrator
-* @Last Modified time: 2018-09-13 21:31:50
+* @Last Modified by:   hxhhxrhxh
+* @Last Modified time: 2018-11-01 21:38:33
 */
 *{
 	margin: 0;
@@ -270,7 +270,7 @@
 .box1 .logo .sss{
 	/* width: 55px; */
 	height: 55px;
-	background: yellow;
+	/* background: yellow; */
 	background-image: url('https://s01.mifile.cn/i/logo-footer.png?v2');
     background-position: 0 0;
     margin-top: 22.5px;
@@ -383,7 +383,7 @@
 .box1 .text .text1{
 	width: 130px;
 	height: 60px;
-	background-color: yellow;
+	/* background-color: yellow; */
 	background-image: url('https://i1.mifile.cn/f/i/g/2015/gif/163d63.gif');
     
     background-position: 0 0;
