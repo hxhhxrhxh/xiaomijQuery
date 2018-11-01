@@ -1,8 +1,8 @@
 /*
 * @Author: Administrator
 * @Date:   2018-09-13 13:52:49
-* @Last Modified by:   Administrator
-* @Last Modified time: 2018-09-15 16:17:10
+* @Last Modified by:   hxhhxrhxh
+* @Last Modified time: 2018-11-01 22:17:04
 */
 
 //页面加载
@@ -321,34 +321,92 @@ $(function(){
     
    //倒计时
    //倒计时
-    let num=document.querySelectorAll(".timing .num");
-    // console.log(num);
+    // let num=document.querySelectorAll(".timing .num");
+    // // console.log(num);
    
-    let t5=setInterval(fn,1000);
-    function fn(){
+    // let t5=setInterval(fn,1000);
+    // function fn(){
 
-       num.forEach((value,index)=>{
+    //    num.forEach((value,index)=>{
             
-            value.innerHTML=move1()[index];
-       })
-    }
-    fn();
-    function move1(){
-        let date=new Date();
-        let time5=new Date(2018,9,20);
-        let timeafter=date.getTime();
-        let timebefore=time5.getTime(2018,9,20);
-        let timeing=Math.floor((timebefore-timeafter)/1000);
-        // console.log(timeing);
-        let arr=[];
-        let hour=Math.floor(timeing%(30*24*60*60)%(60*60*24)/(60*60));
-        let minute=Math.floor(timeing%(30*24*60*60)%(60*60*24)%(60*60)/60);
-        let second=Math.floor(timeing%(30*24*60*60)%(60*60*24)%(60*60)%60);
-        // console.log(hour,minute,second);
-        arr.push(hour,minute,second);
-        return arr;
-    }
+    //         value.innerHTML=move1()[index];
+    //    })
+    // }
+    // fn();
+    // function move1(){
+    //     let date=new Date();
+    //     let time5=new Date(2018,9,20);
+    //     let timeafter=date.getTime();
+    //     let timebefore=time5.getTime(2018,9,20);
+    //     let timeing=Math.floor((timebefore-timeafter)/1000);
+    //     // console.log(timeing);
+    //     let arr=[];
+    //     let hour=Math.floor(timeing%(30*24*60*60)%(60*60*24)/(60*60));
+    //     let minute=Math.floor(timeing%(30*24*60*60)%(60*60*24)%(60*60)/60);
+    //     let second=Math.floor(timeing%(30*24*60*60)%(60*60*24)%(60*60)%60);
+    //     // console.log(hour,minute,second);
+    //     arr.push(hour,minute,second);
+    //     return arr;
+    // }
     
+        timemove();
+    setInterval(timemove,1000)
+    function timemove() {
+        let newtime = new Date()
+        let liss = document.querySelectorAll(".timing .num");
+        let sa = newtime.getFullYear();
+        let sb = newtime.getDate();
+        let sc = newtime.getMonth();
+        if (newtime.getHours() >= 15) {
+            sb += 1;
+        }
+        // console.log(newtime);
+        let nexttime = new Date(sa, sc, sb,15);
+        let cha = Math.floor(nexttime.getTime() / 1000) - Math.floor(newtime.getTime() / 1000);
+        console.log(cha);
+        // console.log(nowtime.getTime());
+        let newh = 0;
+        let newf = 0;
+        let newm = 0;
+        let a = [];
+        hour = Math.floor(cha / (60 * 60));
+        fen = Math.floor(cha % (60 * 60) / 60);
+        miao = Math.floor(cha % 60);
+        if (Math.floor(hour / 10) == 0) {
+            newh = "0" + hour;
+        } else {
+            newh = hour
+        }
+        a.push(newh)
+        if (Math.floor(fen / 10) == 0) {
+            newf = "0" + fen;
+        } else {
+            newf = fen
+        }
+        a.push(newf)
+
+        if (Math.floor(miao / 10) == 0) {
+            newm = "0" + miao;
+        } else {
+            newm = miao
+        }
+        a.push(newm)
+        for (let i = 0; i < liss.length; i++) {
+            liss[i].innerText = a[i]
+        }
+    }
+
+
+
+    //返回顶部
+    //返回顶部
+    let back=$(".back");
+    back.click(function(){
+        animate((document.body),{scrollTop:0});
+        animate((document.documentElement),{scrollTop:0});
+    
+    })
+
 
 })
 
