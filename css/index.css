@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-08-01 21:12:31
 * @Last Modified by:   hxhhxrhxh
-* @Last Modified time: 2018-11-01 21:38:33
+* @Last Modified time: 2018-11-01 22:21:16
 */
 *{
 	margin: 0;
@@ -800,7 +800,7 @@ input.btn{
 	width: 320px;
 	height: 170px;
 	float: left;
-	background: yellow;
+	/* background: yellow; */
 	margin-top: 10px;
 	margin-right: 10px;
 
